@@ -25,17 +25,11 @@
         <button>Visualiser les etapes d'un colis</button>
     </a>
 </div>
-<div><h1>Modifier une étape à un de vos colis</h1></div>
+<div><h1>Modification de votre étape</h1></div>
 <div>
     <form action="ModifierEtapeServlet" method="post" class="form">
-        <div>
-            <input type="text" value="" name="id_colis" id="id_colis" >
-            <label for="id_colis">id colis</label>
-        </div>
-        <div>
-            <input type="text" value="" name="id_etape" id="id_etape" >
-            <label for="id_etape">id etape colis</label>
-        </div>
+        <h1>Etape colis: ${idEtape}</h1>
+        <input id="id_etape" name="id_etape" type="hidden" value=${idEtape}>
         <div >
             <input  type="text" id="latitude" name="latitude">
             <label for="latitude">Latitude</label>

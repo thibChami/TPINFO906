@@ -14,9 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-
-@WebServlet("/ModifierEtapeServlet")
-public class ModifierEtapeServlet extends HttpServlet{
+@WebServlet("/FormulaireModifierEtapeServlet")
+public class FormulaireModifierEtapeServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @EJB
@@ -26,7 +25,7 @@ public class ModifierEtapeServlet extends HttpServlet{
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ModifierEtapeServlet() {
+    public FormulaireModifierEtapeServlet() {
         super();
     }
 
@@ -34,15 +33,12 @@ public class ModifierEtapeServlet extends HttpServlet{
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        long id_etape = Long.parseLong(request.getParameter("id_etape"));
-        float latitude = Float.parseFloat(request.getParameter("latitude"));
-        float longitude = Float.parseFloat(request.getParameter("longitude"));
-        String emplacement = request.getParameter("emplacement");
-        EtatColis etat = EtatColis.valueOf(request.getParameter("etat"));
 
-        EtapeColis etape =  etapeColisOperation.modifierEtapeColis(id_etape, emplacement, etat, latitude, longitude);
-        request.setAttribute("etape", etape);
-        request.getRequestDispatcher("/AfficherEtape.jsp").forward(request, response);
+        long id_etape = Long.parseLong(request.getParameter("id_etape"));
+
+        request.setAttribute("idEtape", id_etape);
+
+        request.getRequestDispatcher("/ModifierEtape.jsp").forward(request, response);
     }
 
     /**

@@ -55,6 +55,5 @@ public class EtapeColisBean implements EtapeColisOperation {
         etapeColis.setLongitude(longitude);
         return etapeColis;
     }
-
-
+    
 }

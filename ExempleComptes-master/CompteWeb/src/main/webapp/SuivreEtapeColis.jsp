@@ -56,13 +56,22 @@
                         <td>${etapeColis.etatColis}</td>
                         <td>${etapeColis.latitude}</td>
                         <td>${etapeColis.longitude}</td>
-                        <td><a href="/CompteWeb/ModifierEtape.jsp">
-                            <button>Modifier</button>
-                        </a></td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
+            <div>
+            <form action="FormulaireModifierEtapeServlet" method="post" class="form">
+                <div>
+                    <h2>Veuillez entrer le numéro de l'id de l'étape que vous souhaitez modifier</h2>
+                    <input  type="text" id="id_etape" name="id_etape">
+                    <label for="id_etape">id Etape</label>
+                </div>
+                <div>
+                <input type="submit" value="Modifier l'étape">
+                </div>
+            </form>
+            </div>
         </div>
     </main>
 </div>
